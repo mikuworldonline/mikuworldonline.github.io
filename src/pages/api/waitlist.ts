@@ -1,12 +1,13 @@
 export const prerender = false;
 
 import type { APIRoute } from "astro";
-import { WaitingList, db, sql } from "astro:db";
+// import { WaitingList, db, sql } from "astro:db";
 
 export const GET: APIRoute = async () => {
-  const waiting = await db
-    .select({ count: sql<number>`count(*)`.mapWith(Number) })
-    .from(WaitingList);
+  // const waiting = await db
+  //   .select({ count: sql<number>`count(*)`.mapWith(Number) })
+  //   .from(WaitingList);
+  const waiting = null;
 
   if (!waiting) {
     return new Response(
@@ -19,7 +20,7 @@ export const GET: APIRoute = async () => {
 
   return new Response(
     JSON.stringify({
-      count: waiting[0].count,
+      // count: waiting[0]?.count,
     }),
     { status: 200 }
   );
@@ -37,19 +38,19 @@ export const POST: APIRoute = async ({ request }) => {
     );
   }
 
-  if (typeof email === "string") {
-    try {
-      await db.insert(WaitingList).values({ email });
-    } catch (error) {
-      // return error if user insert same email. email is unique!
-      return new Response(
-        JSON.stringify({
-          message: "error",
-        }),
-        { status: 400 }
-      );
-    }
-  }
+  // if (typeof email === "string") {
+  //   try {
+  //     await db.insert(WaitingList).values({ email });
+  //   } catch (error) {
+  //     // return error if user insert same email. email is unique!
+  //     return new Response(
+  //       JSON.stringify({
+  //         message: "error",
+  //       }),
+  //       { status: 400 }
+  //     );
+  //   }
+  // }
 
   return new Response(
     JSON.stringify({
