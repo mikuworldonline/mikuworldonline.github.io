@@ -3,41 +3,40 @@ import type { SidebarNavItem, SiteConfig } from "@/types";
 export const siteConfig: SiteConfig = {
   name: "mikuworld.online",
   description:
-    "An modern example app built using Astro v4 & shadcn/ui. Inspired by shadcn/taxonomy.",
-  url: "https://astro-nomy.vercel.app",
+    "MikuWorld Online is a platform to share and explore Miku-related content, including pictures, video, art, and community events.",
+  url: "https://mikuworld.online",
   ogImage: "https://astro-nomy.vercel.app/og.jpg",
   links: {
-    twitter: "https://twitter.com/miickasmt",
-    github: "https://github.com/mickasmt/astro-nomy",
+    github: "https://github.com/mikuworldonline/mikuworldonline.github.io",
   },
 };
 
 export const footerLinks: SidebarNavItem[] = [
-  {
-    title: "Company",
-    items: [
-      { title: "About", href: "#" },
-      { title: "Enterprise", href: "#" },
-      { title: "Partners", href: "#" },
-      { title: "Jobs", href: "#" },
-    ],
-  },
-  {
-    title: "Product",
-    items: [
-      { title: "Security", href: "#" },
-      { title: "Customization", href: "#" },
-      { title: "Customers", href: "#" },
-      { title: "Changelog", href: "#" },
-    ],
-  },
-  {
-    title: "Docs",
-    items: [
-      { title: "Introduction", href: "#" },
-      { title: "Installation", href: "#" },
-      { title: "Components", href: "#" },
-      { title: "Code Blocks", href: "#" },
-    ],
-  },
+  // {
+  //   title: "Company",
+  //   items: [
+  //     { title: "About", href: "#" },
+  //     { title: "Enterprise", href: "#" },
+  //     { title: "Partners", href: "#" },
+  //     { title: "Jobs", href: "#" },
+  //   ],
+  // },
+  // {
+  //   title: "Product",
+  //   items: [
+  //     { title: "Security", href: "#" },
+  //     { title: "Customization", href: "#" },
+  //     { title: "Customers", href: "#" },
+  //     { title: "Changelog", href: "#" },
+  //   ],
+  // },
+  // {
+  //   title: "Docs",
+  //   items: [
+  //     { title: "Introduction", href: "#" },
+  //     { title: "Installation", href: "#" },
+  //     { title: "Components", href: "#" },
+  //     { title: "Code Blocks", href: "#" },
+  //   ],
+  // },
 ];

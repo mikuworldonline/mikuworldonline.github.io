@@ -1,0 +1,29 @@
+---
+import ExampleGrid from "@/components/example-grid.astro";
+import PageHeader from "@/components/page-header.astro";
+import { navMenuConfig } from "@/config/nav-menu";
+import MainLayout from "@/layouts/main-layout.astro";
+
+const websites = navMenuConfig.websitesNav[0].items;
+const video = navMenuConfig.videoNav[0].items;
+const pictures = navMenuConfig.picturesNav[0].items;
+const games = navMenuConfig.gamesNav[0].items;
+const goods = navMenuConfig.goodsNav[0].items;
+---
+
+<MainLayout title="">
+  <div class="bg-background-200">
+    <section class="container py-12">
+      <PageHeader
+        heading="Discovery"
+        text="Differents pages and websites apps built with Astro v4.5, shadcn/ui & react js. Fully Open Source."
+      />
+
+      <ExampleGrid title="Pictures" items={pictures} />
+      <ExampleGrid title="video" items={video} />
+      <ExampleGrid title="Websites" items={websites} />
+      <ExampleGrid title="Games" items={games} />
+      <ExampleGrid title="Goods" items={goods} />
+    </section>
+  </div>
+</MainLayout>

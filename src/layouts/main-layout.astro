@@ -16,9 +16,10 @@ type Props = {
   title: string;
   description?: string;
   mainClass?: string;
+  fixedFooter?: boolean;
 };
 
-const { title, description, mainClass } = Astro.props;
+const { title, description, mainClass, fixedFooter } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
@@ -36,8 +37,11 @@ const { title, description, mainClass } = Astro.props;
     <SheetMobileNav
       mainNavItems={[...navMenuConfig.links]}
       sidebarNavItems={[
-        ...navMenuConfig.pagesNav,
-        ...navMenuConfig.examplesNav,
+        ...navMenuConfig.picturesNav,
+        ...navMenuConfig.videoNav,
+        ...navMenuConfig.gamesNav,
+        ...navMenuConfig.websitesNav,
+        ...navMenuConfig.goodsNav,
       ]}
       slot="mobile-nav-header"
       client:load
@@ -60,5 +64,5 @@ const { title, description, mainClass } = Astro.props;
     <slot />
   </main>
 
-  <Footer />
+  <Footer fixed={fixedFooter} />
 </BaseLayout>

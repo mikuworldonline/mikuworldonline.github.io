@@ -15,8 +15,11 @@ import { navMenuConfig } from "@/config/nav-menu";
 import type { MenuItem } from "@/types";
 
 const links = navMenuConfig.links;
-const pages = navMenuConfig.pagesNav[0];
-const examples = navMenuConfig.examplesNav[0];
+const pictures = navMenuConfig.picturesNav[0];
+const websites = navMenuConfig.websitesNav[0];
+const games = navMenuConfig.gamesNav[0];
+const goods = navMenuConfig.goodsNav[0];
+const video = navMenuConfig.videoNav[0];
 
 export function MainNavigationMenu() {
   return (
@@ -34,7 +37,7 @@ export function MainNavigationMenu() {
                   <Icons.logo className="size-8" />
                   <div className="mb-2 mt-3 text-lg font-medium">mikuworld.online</div>
                   <p className="text-sm leading-tight text-muted-foreground">
-                    Pages and examples apps built with Astro v4.5,
+                    Pages and websites apps built with Astro v4.5,
                     shadcn/ui & react js.
                     <br />
                     Open Source.
@@ -50,10 +53,10 @@ export function MainNavigationMenu() {
         </NavigationMenuItem> */}
 
         <NavigationMenuItem>
-          <NavigationMenuTrigger>{pages.title}</NavigationMenuTrigger>
+          <NavigationMenuTrigger>{pictures.title}</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {pages.items?.map((page) => (
+              {pictures.items?.map((page) => (
                 <ListItem key={page.title} {...page} />
               ))}
             </ul>
@@ -61,10 +64,43 @@ export function MainNavigationMenu() {
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <NavigationMenuTrigger>{examples.title}</NavigationMenuTrigger>
+          <NavigationMenuTrigger>{video.title}</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {examples.items?.map((example) => (
+              {video.items?.map((example) => (
+                <ListItem key={example.title} {...example} />
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>{games.title}</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              {games.items?.map((example) => (
+                <ListItem key={example.title} {...example} />
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>{websites.title}</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              {websites.items?.map((example) => (
+                <ListItem key={example.title} {...example} />
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>{goods.title}</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              {goods.items?.map((example) => (
                 <ListItem key={example.title} {...example} />
               ))}
             </ul>
