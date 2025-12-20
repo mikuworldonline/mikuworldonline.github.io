@@ -47,7 +47,7 @@ export const navMenuConfig: NavMenuConfig = {
       ],
     },
   ],
-  videoNav: [
+  videosNav: [
     {
       title: "影音",
       items: [

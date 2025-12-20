@@ -53,7 +53,7 @@ export type NavMenuConfig = {
   websitesNav: SidebarNavItem[];
   gamesNav: SidebarNavItem[];
   goodsNav: SidebarNavItem[];
-  videoNav: SidebarNavItem[];
+  videosNav: SidebarNavItem[];
   links: MenuItem[];
 };
 

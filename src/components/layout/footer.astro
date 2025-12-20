@@ -3,6 +3,7 @@
 import { ThemeToggle } from "@/components/theme-toggle";
 import { footerLinks, siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
+import { isIndex, getCoverImage } from "@/config/site";
 import { Icon } from "astro-icon/components";
 
 type Props = {
@@ -16,9 +17,10 @@ const getCopyRightYear = () => {
   const startYear = 2025;
   return currentYear === startYear ? `${startYear}` : `${startYear} - ${currentYear}`;
 };
+const coverImg = getCoverImage();
 ---
 
-<footer class={cn("border-t fixed bottom-0 w-full", className)}>
+<footer class={cn(`border-t bg-background ${fixed ? "fixed bottom-0 w-full" : ""}`, className)}>
   <!-- <div
     class="container grid grid-cols-1 gap-6 py-14 sm:grid-cols-2 md:grid-cols-5"
   >
@@ -49,7 +51,7 @@ const getCopyRightYear = () => {
     </div>
   </div> -->
 
-  <div class="border-t py-1">
+  <div class="border-t py-3">
     <div class="container flex items-center justify-between">
       <span class="text-muted-foreground text-sm">
         Copyright &copy; {getCopyRightYear()}. All rights reserved. Built by 0326. Theme inspired by Astronomy.
@@ -75,17 +77,17 @@ const getCopyRightYear = () => {
         </a>.
       </p> -->
 
-      <div class="flex items-center gap-3">
+      {isIndex(Astro.url) && coverImg?.author && <div class="flex items-center text-muted-foreground text-sm gap-3">
+        Cover Image by 
         <a
-          href={siteConfig.links.github}
+          href={coverImg.origin}
           target="_blank"
           rel="noreferrer"
-          class="font-medium underline underline-offset-4"
+          class="underline underline-offset-2"
         >
-          <Icon name="github" class="size-5" />
+          {coverImg.author}
         </a>
-        <ThemeToggle client:load />
-      </div>
+      </div>}
     </div>
   </div>
 </footer>

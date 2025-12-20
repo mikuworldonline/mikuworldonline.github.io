@@ -19,7 +19,7 @@ const pictures = navMenuConfig.picturesNav[0];
 const websites = navMenuConfig.websitesNav[0];
 const games = navMenuConfig.gamesNav[0];
 const goods = navMenuConfig.goodsNav[0];
-const video = navMenuConfig.videoNav[0];
+const videos = navMenuConfig.videosNav[0];
 
 export function MainNavigationMenu() {
   return (
@@ -64,10 +64,10 @@ export function MainNavigationMenu() {
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <NavigationMenuTrigger>{video.title}</NavigationMenuTrigger>
+          <NavigationMenuTrigger>{videos.title}</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {video.items?.map((example) => (
+              {videos.items?.map((example) => (
                 <ListItem key={example.title} {...example} />
               ))}
             </ul>
