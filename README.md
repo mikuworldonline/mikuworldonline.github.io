@@ -1,4 +1,4 @@
-# Astronomy
+# mikuworld.online
 
 An open source application built using the latest features in Astro v4 with shadcn/ui.
 
