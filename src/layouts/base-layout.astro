@@ -5,6 +5,7 @@ import TailwindIndicator from "@/components/tailwind-indicator.astro";
 import { Toaster } from "sonner";
 import { isIndex, getCoverImage } from "@/config/site";
 import { cn } from "@/lib/utils";
+import { body } from "dist/chunks/1_0_Cz33Ri4B.mjs";
 
 type Props = {
   title: string;
@@ -18,7 +19,8 @@ const { title, description, bodyClass } = Astro.props;
 const bodyStyle: any = {};
 if (isIndex(Astro.url)) {
   const img = getCoverImage();
-  bodyStyle.background = `url(${img.img}) no-repeat`;
+  bodyStyle.backgroundImage = `url(${img.img})`;
+  bodyStyle.backgroundRepeat = "no-repeat";
   bodyStyle.backgroundSize = img.size;
   bodyStyle.backgroundPosition = img.position;
 }
@@ -30,7 +32,7 @@ if (isIndex(Astro.url)) {
   <head>
     <BaseHead title={title} description={description} />
   </head>
-  <body class={cn("flex flex-col min-h-screen", bodyClass)} style={bodyStyle}>
+  <body class={cn("flex flex-col min-h-screen bg-background", bodyClass)} style={bodyStyle}>
     <slot />
     <TailwindIndicator />
     <Toaster richColors client:only="react" />

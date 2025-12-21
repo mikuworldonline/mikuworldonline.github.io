@@ -3,7 +3,8 @@ import type { SidebarNavItem, SiteConfig } from "@/types";
 export const siteConfig: SiteConfig = {
   name: "mikuworld.online",
   description:
-    "MikuWorld is a platform to share and explore Miku-related content, including pictures, videos, games, goods, and awesome websites.",
+    // "MikuWorld is a platform to share and explore Miku-related content, including pictures, videos, games, goods, and awesome websites.",
+    "MikuWorld 是一个分享与探索初音未来相关内容的平台，包括图片、音乐、视频、游戏、周边和各类精彩网站。",
   url: "https://mikuworld.online",
   ogImage: "https://astro-nomy.vercel.app/og.jpg",
   links: {
@@ -52,13 +53,13 @@ export const coverImages = [
   {
     position: "center center",
     size: "cover",
-    img: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/wallhaven-p27ov3.png",
+    img: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/miku.png",
     origin: "https://wallhaven.cc/w/p27ov3",
     author: "wallhaven",
   },
 ];
 
-export const getCoverImage = (index = 0) => {
+export const getCoverImage = (index = 1) => {
   return coverImages[index % coverImages.length];
 };
 

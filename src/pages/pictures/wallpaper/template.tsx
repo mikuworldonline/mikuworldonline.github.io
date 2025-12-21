@@ -114,7 +114,9 @@ function WallpaperCard({
         backgroundPosition: "center",
       }}
     >
-      {/* <div className="flex w-full flex-col justify-center">{data.title}</div> */}
+      <a href={data.origin_site} target="_blank" rel="noopener noreferrer">
+        {/* <div className="flex w-full flex-col justify-center">{data.title}</div> */}
+      </a>
     </div>
   );
 }

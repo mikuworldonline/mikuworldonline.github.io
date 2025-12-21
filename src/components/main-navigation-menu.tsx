@@ -129,6 +129,7 @@ export function MainNavigationMenu() {
 const ListItem: React.FC<MenuItem> = ({
   title,
   href,
+  image,
   description,
   launched,
   disabled,
@@ -136,9 +137,19 @@ const ListItem: React.FC<MenuItem> = ({
   forceReload,
 }) => {
   const target = external ? "_blank" : undefined;
-
+  const opacity = disabled ? 0.7 : 0.4;
+  const cnum = 255;
   return (
-    <li>
+    <li
+      className="relative rounded-md"
+      style={{
+        background: `linear-gradient(rgba(${cnum}, ${cnum}, ${cnum}, 0), rgba(${cnum}, ${cnum}, ${cnum}, ${opacity})), 
+              url('${image}')`,
+        backgroundSize: "contain",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "right bottom",
+      }}
+    >
       <a
         target={target}
         href={disabled ? undefined : href}
@@ -170,7 +181,10 @@ const ListItem: React.FC<MenuItem> = ({
             </Badge>
           ) : null}
         </div>
-        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+        <p
+          className="line-clamp-2 text-sm leading-snug text-muted-foreground"
+          style={{ visibility: "hidden" }}
+        >
           {description}
         </p>
       </a>

@@ -9,28 +9,27 @@ export const navMenuConfig: NavMenuConfig = {
           title: "手机壁纸",
           href: "/pictures/wallpaper/mobile",
           description: "A landing page template with differents sections.",
-          image:
-            "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx177937-Tzgg6rAdhCoH.jpg",
+          image: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/emj4.png",
         },
         {
           title: "桌面壁纸",
           href: "/pictures/wallpaper/desktop",
           description: "A reproduction of Starlog template with Tailwind CSS.",
-          image: "/images/examples/changelog.jpg",
+          image: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/emj3.png",
         },
         {
           title: "头像",
           href: "/waitlist",
           description:
             "A waitlist form using Astro DB, React Hook Form & Sonner. Static page.",
-          image: "/images/examples/waitlist.jpg",
+          image: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/emj1.png",
           disabled: true,
         },
         {
           title: "表情包",
           href: "/pricing",
           description: "Pricing cards, FAQs and more content with price.",
-          image: "/images/examples/pricing.jpg",
+          image: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/emj2.png",
           disabled: true,
         },
       ],
@@ -44,14 +43,14 @@ export const navMenuConfig: NavMenuConfig = {
           title: "Landing",
           href: "/landing",
           description: "A landing page template with differents sections.",
-          image: "/images/examples/landing.jpg",
+          image: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/emj2.png",
           disabled: true,
         },
         {
           title: "Changelog",
           href: "/releases",
           description: "A reproduction of Starlog template with Tailwind CSS.",
-          image: "/images/examples/changelog.jpg",
+          image: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/emj2.png",
           disabled: true,
         },
         {
@@ -59,7 +58,7 @@ export const navMenuConfig: NavMenuConfig = {
           href: "/waitlist",
           description:
             "A waitlist form using Astro DB, React Hook Form & Sonner. Static page.",
-          image: "/images/examples/waitlist.jpg",
+          image: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/emj2.png",
           disabled: true,
         },
       ],
@@ -73,7 +72,7 @@ export const navMenuConfig: NavMenuConfig = {
           title: "Static Blog",
           href: "/blog",
           description: "A Markdown/MDX blog built using Content Collections.",
-          image: "/images/examples/static-blog.jpg",
+          image: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/emj2.png",
           disabled: true,
         },
         {
@@ -81,7 +80,7 @@ export const navMenuConfig: NavMenuConfig = {
           href: "/docs/getting-started",
           description:
             "A Markdown/MDX docs site built using Content Collections.",
-          image: "/images/examples/documentation.jpg",
+          image: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/emj2.png",
           disabled: true,
         },
         {
@@ -89,7 +88,7 @@ export const navMenuConfig: NavMenuConfig = {
           href: "/animes",
           description:
             "Fetch anime content from an graphql endpoint. Tabs component.",
-          image: "/images/examples/animes.jpg",
+          image: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/emj2.png",
           launched: true,
           disabled: true,
         },
@@ -98,7 +97,7 @@ export const navMenuConfig: NavMenuConfig = {
           href: "/blog-db",
           description:
             "Blog built using Astro DB. With categories, views & likes.",
-          // image: "/images/examples/blog-db.jpg",
+          image: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/emj2.png",
           disabled: true,
         },
         {
@@ -106,13 +105,13 @@ export const navMenuConfig: NavMenuConfig = {
           href: "/products",
           disabled: true,
           description: "Ecommerce pages fetching data from an API.",
-          // image: "/images/examples/ecommerce.jpg",
+          image: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/emj2.png",
         },
         {
           title: "Authentification",
           href: "/auth",
           description: "Implement an authentification using Astro DB & Lucia",
-          // image: "/images/examples/auth.jpg",
+          image: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/emj2.png",
           disabled: true,
         },
       ],
@@ -126,7 +125,7 @@ export const navMenuConfig: NavMenuConfig = {
           title: "Static Blog",
           href: "/blog",
           description: "A Markdown/MDX blog built using Content Collections.",
-          image: "/images/examples/static-blog.jpg",
+          image: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/emj2.png",
           disabled: true,
         },
         {
@@ -134,7 +133,7 @@ export const navMenuConfig: NavMenuConfig = {
           href: "/docs/getting-started",
           description:
             "A Markdown/MDX docs site built using Content Collections.",
-          image: "/images/examples/documentation.jpg",
+          image: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/emj2.png",
           disabled: true,
         },
         {
@@ -142,7 +141,7 @@ export const navMenuConfig: NavMenuConfig = {
           href: "/animes",
           description:
             "Fetch anime content from an graphql endpoint. Tabs component.",
-          image: "/images/examples/animes.jpg",
+          image: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/emj2.png",
           disabled: true,
         },
         {
@@ -150,7 +149,7 @@ export const navMenuConfig: NavMenuConfig = {
           href: "/blog-db",
           description:
             "Blog built using Astro DB. With categories, views & likes.",
-          // image: "/images/examples/blog-db.jpg",
+          image: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/emj2.png",
           disabled: true,
         },
         {
@@ -158,13 +157,13 @@ export const navMenuConfig: NavMenuConfig = {
           href: "/products",
           disabled: true,
           description: "Ecommerce pages fetching data from an API.",
-          // image: "/images/examples/ecommerce.jpg",
+          image: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/emj2.png",
         },
         {
           title: "Authentification",
           href: "/auth",
           description: "Implement an authentification using Astro DB & Lucia",
-          // image: "/images/examples/auth.jpg",
+          image: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/emj2.png",
           disabled: true,
         },
       ],
@@ -178,7 +177,7 @@ export const navMenuConfig: NavMenuConfig = {
           title: "手办",
           href: "/blog",
           description: "A Markdown/MDX blog built using Content Collections.",
-          image: "/images/examples/static-blog.jpg",
+          image: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/emj2.png",
           disabled: true,
         },
         {
@@ -186,7 +185,7 @@ export const navMenuConfig: NavMenuConfig = {
           href: "/docs/getting-started",
           description:
             "A Markdown/MDX docs site built using Content Collections.",
-          image: "/images/examples/documentation.jpg",
+          image: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/emj2.png",
           disabled: true,
         },
         {
@@ -194,7 +193,7 @@ export const navMenuConfig: NavMenuConfig = {
           href: "/animes",
           description:
             "Fetch anime content from an graphql endpoint. Tabs component.",
-          image: "/images/examples/animes.jpg",
+          image: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/emj2.png",
           disabled: true,
         },
         {
@@ -202,7 +201,7 @@ export const navMenuConfig: NavMenuConfig = {
           href: "/blog-db",
           description:
             "Blog built using Astro DB. With categories, views & likes.",
-          // image: "/images/examples/blog-db.jpg",
+          image: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/emj2.png",
           disabled: true,
         },
       ],
