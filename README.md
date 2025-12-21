@@ -2,6 +2,8 @@
 
 An open source application built using the latest features in Astro v4 with shadcn/ui.
 
+ui: https://wind-ui.com/
+
 ![blog](public/og.jpg)
 
 > **Warning**

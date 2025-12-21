@@ -1,0 +1,15 @@
+---
+export const prerender = false;
+
+import MainLayout from "@/layouts/main-layout.astro";
+import { mobileWallpapers } from "@/pages/api/pictures/wallpaper";
+import { WallpaperList } from "@/pages/pictures/wallpaper/template";
+
+const data = mobileWallpapers;
+---
+
+<MainLayout title="Mobile Wallpapers">
+  <section class="container py-8 ">
+    <WallpaperList isMobile data={data} client:load />
+  </section>
+</MainLayout>

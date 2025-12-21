@@ -6,43 +6,32 @@ export const navMenuConfig: NavMenuConfig = {
       title: "图像",
       items: [
         {
-          title: "Landing",
-          href: "/landing",
+          title: "手机壁纸",
+          href: "/pictures/wallpaper/mobile",
           description: "A landing page template with differents sections.",
-          image: "/images/examples/landing.jpg",
+          image:
+            "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx177937-Tzgg6rAdhCoH.jpg",
         },
         {
-          title: "Changelog",
-          href: "/releases",
+          title: "桌面壁纸",
+          href: "/pictures/wallpaper/desktop",
           description: "A reproduction of Starlog template with Tailwind CSS.",
           image: "/images/examples/changelog.jpg",
         },
         {
-          title: "Waitlist",
+          title: "头像",
           href: "/waitlist",
           description:
             "A waitlist form using Astro DB, React Hook Form & Sonner. Static page.",
           image: "/images/examples/waitlist.jpg",
-          forceReload: true,
+          disabled: true,
         },
         {
-          title: "Pricing",
+          title: "表情包",
           href: "/pricing",
           description: "Pricing cards, FAQs and more content with price.",
           image: "/images/examples/pricing.jpg",
-        },
-        {
-          title: "About",
-          href: "/about",
-          description: "A simple page with a masonry gallery and little text.",
-          image: "/images/examples/about.jpg",
-        },
-        {
-          title: "Newsletter",
-          href: "/newsletter",
-          description:
-            "A newsletter form using Astro DB & Simple Stack Form. Counter display!",
-          image: "/images/examples/newsletter.jpg",
+          disabled: true,
         },
       ],
     },
@@ -56,12 +45,14 @@ export const navMenuConfig: NavMenuConfig = {
           href: "/landing",
           description: "A landing page template with differents sections.",
           image: "/images/examples/landing.jpg",
+          disabled: true,
         },
         {
           title: "Changelog",
           href: "/releases",
           description: "A reproduction of Starlog template with Tailwind CSS.",
           image: "/images/examples/changelog.jpg",
+          disabled: true,
         },
         {
           title: "Waitlist",
@@ -69,26 +60,7 @@ export const navMenuConfig: NavMenuConfig = {
           description:
             "A waitlist form using Astro DB, React Hook Form & Sonner. Static page.",
           image: "/images/examples/waitlist.jpg",
-          forceReload: true,
-        },
-        {
-          title: "Pricing",
-          href: "/pricing",
-          description: "Pricing cards, FAQs and more content with price.",
-          image: "/images/examples/pricing.jpg",
-        },
-        {
-          title: "About",
-          href: "/about",
-          description: "A simple page with a masonry gallery and little text.",
-          image: "/images/examples/about.jpg",
-        },
-        {
-          title: "Newsletter",
-          href: "/newsletter",
-          description:
-            "A newsletter form using Astro DB & Simple Stack Form. Counter display!",
-          image: "/images/examples/newsletter.jpg",
+          disabled: true,
         },
       ],
     },
@@ -102,6 +74,7 @@ export const navMenuConfig: NavMenuConfig = {
           href: "/blog",
           description: "A Markdown/MDX blog built using Content Collections.",
           image: "/images/examples/static-blog.jpg",
+          disabled: true,
         },
         {
           title: "Docs",
@@ -109,6 +82,7 @@ export const navMenuConfig: NavMenuConfig = {
           description:
             "A Markdown/MDX docs site built using Content Collections.",
           image: "/images/examples/documentation.jpg",
+          disabled: true,
         },
         {
           title: "Anime List",
@@ -117,6 +91,7 @@ export const navMenuConfig: NavMenuConfig = {
             "Fetch anime content from an graphql endpoint. Tabs component.",
           image: "/images/examples/animes.jpg",
           launched: true,
+          disabled: true,
         },
         {
           title: "Blog DB",
@@ -152,6 +127,7 @@ export const navMenuConfig: NavMenuConfig = {
           href: "/blog",
           description: "A Markdown/MDX blog built using Content Collections.",
           image: "/images/examples/static-blog.jpg",
+          disabled: true,
         },
         {
           title: "Docs",
@@ -159,6 +135,7 @@ export const navMenuConfig: NavMenuConfig = {
           description:
             "A Markdown/MDX docs site built using Content Collections.",
           image: "/images/examples/documentation.jpg",
+          disabled: true,
         },
         {
           title: "Anime List",
@@ -166,7 +143,7 @@ export const navMenuConfig: NavMenuConfig = {
           description:
             "Fetch anime content from an graphql endpoint. Tabs component.",
           image: "/images/examples/animes.jpg",
-          launched: true,
+          disabled: true,
         },
         {
           title: "Blog DB",
@@ -198,46 +175,34 @@ export const navMenuConfig: NavMenuConfig = {
       title: "周边",
       items: [
         {
-          title: "Static Blog",
+          title: "手办",
           href: "/blog",
           description: "A Markdown/MDX blog built using Content Collections.",
           image: "/images/examples/static-blog.jpg",
+          disabled: true,
         },
         {
-          title: "Docs",
+          title: "吧唧",
           href: "/docs/getting-started",
           description:
             "A Markdown/MDX docs site built using Content Collections.",
           image: "/images/examples/documentation.jpg",
+          disabled: true,
         },
         {
-          title: "Anime List",
+          title: "立牌",
           href: "/animes",
           description:
             "Fetch anime content from an graphql endpoint. Tabs component.",
           image: "/images/examples/animes.jpg",
-          launched: true,
+          disabled: true,
         },
         {
-          title: "Blog DB",
+          title: "色纸",
           href: "/blog-db",
           description:
             "Blog built using Astro DB. With categories, views & likes.",
           // image: "/images/examples/blog-db.jpg",
-          disabled: true,
-        },
-        {
-          title: "Ecommerce",
-          href: "/products",
-          disabled: true,
-          description: "Ecommerce pages fetching data from an API.",
-          // image: "/images/examples/ecommerce.jpg",
-        },
-        {
-          title: "Authentification",
-          href: "/auth",
-          description: "Implement an authentification using Astro DB & Lucia",
-          // image: "/images/examples/auth.jpg",
           disabled: true,
         },
       ],

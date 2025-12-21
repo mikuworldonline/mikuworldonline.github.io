@@ -1,0 +1,15 @@
+---
+export const prerender = false;
+
+import MainLayout from "@/layouts/main-layout.astro";
+import { desktopWallpapers } from "@/pages/api/pictures/wallpaper";
+import { WallpaperList } from "@/pages/pictures/wallpaper/template";
+
+const data = desktopWallpapers;
+---
+
+<MainLayout title="Desktop Wallpapers">
+  <section class="container py-8 ">
+    <WallpaperList data={data} client:load />
+  </section>
+</MainLayout>

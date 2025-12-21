@@ -53,6 +53,8 @@ export const coverImages = [
     position: "center center",
     size: "cover",
     img: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/wallhaven-p27ov3.png",
+    origin: "https://wallhaven.cc/w/p27ov3",
+    author: "wallhaven",
   },
 ];
 
