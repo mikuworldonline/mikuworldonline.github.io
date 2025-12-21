@@ -1,5 +1,3 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { SegmentedControl } from "@radix-ui/themes";
 import type { Wallpaper } from "@/pages/api/pictures/wallpaper";
 
 import { Icons } from "@/icons";
