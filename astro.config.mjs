@@ -6,6 +6,7 @@ import tailwind from "@astrojs/tailwind";
 // import vercel from "@astrojs/vercel/serverless";
 import icon from "astro-icon";
 import { defineConfig } from "astro/config";
+import robotsTxt from "astro-robots-txt";
 import simpleStackForm from "simple-stack-form";
 
 // https://astro.build/config
@@ -27,6 +28,7 @@ export default defineConfig({
     }),
     // db(),
     simpleStackForm(),
+    robotsTxt(),
   ],
   // output: "hybrid",
   // adapter: vercel({
