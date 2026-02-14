@@ -8,6 +8,8 @@ import {
   fromUnixTime,
   isPast,
 } from "date-fns";
+import { useState } from "react";
+import { WallpaperPreviewModal } from "./preview";
 
 interface WallpaperListProps {
   data: Wallpaper[];
@@ -82,15 +84,53 @@ export default function ButtonGroupsRoundedSmSecondaryLeadingIcon() {
 }
 
 export function WallpaperList({ data, isMobile }: WallpaperListProps) {
+  const [selectedWallpaperIndex, setSelectedWallpaperIndex] = useState<number | null>(null);
+
+  const handleOpenModal = (index: number) => {
+    setSelectedWallpaperIndex(index);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedWallpaperIndex(null);
+  };
+
+  const handleNext = () => {
+    if (selectedWallpaperIndex !== null && selectedWallpaperIndex < data.length - 1) {
+      setSelectedWallpaperIndex(selectedWallpaperIndex + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (selectedWallpaperIndex !== null && selectedWallpaperIndex > 0) {
+      setSelectedWallpaperIndex(selectedWallpaperIndex - 1);
+    }
+  };
+
   return (
     <div>
       {/* {ButtonGroupsRoundedSmSecondaryLeadingIcon()} */}
       {/* <div className="flex flex-row flex-wrap gap-4 justify-center w-full my-4"> */}
       <div className="grid grid-cols-4 gap-4 md:grid-cols-8 lg:grid-cols-12">
         {data?.map((paper, i) => (
-          <WallpaperCard isMobile={isMobile} key={i} data={paper} />
+          <WallpaperCard
+            isMobile={isMobile}
+            key={i}
+            data={paper}
+            onClick={() => handleOpenModal(i)}
+          />
         ))}
       </div>
+
+      {selectedWallpaperIndex !== null && data[selectedWallpaperIndex] && (
+        <WallpaperPreviewModal
+          isOpen={true}
+          onClose={handleCloseModal}
+          wallpaper={data[selectedWallpaperIndex]}
+          onNext={handleNext}
+          onPrev={handlePrev}
+          isMobile={isMobile}
+        />
+      )}
     </div>
   );
 }
@@ -98,13 +138,16 @@ export function WallpaperList({ data, isMobile }: WallpaperListProps) {
 function WallpaperCard({
   data,
   isMobile,
+  onClick,
 }: {
   data: Wallpaper;
   isMobile?: boolean;
+  onClick: () => void;
 }) {
   const sizeClass = isMobile ? "aspect-[9/16]" : "aspect-[16/9]";
   return (
     <div
+      onClick={onClick}
       className={`col-span-4 lg:col-span-3 ${sizeClass} rounded-md bg-muted-foreground/10 hover:scale-[1.02] transition-transform cursor-pointer shadow-md`}
       style={{
         backgroundImage: `url(${data.thumb_url})`,
@@ -112,9 +155,7 @@ function WallpaperCard({
         backgroundPosition: "center",
       }}
     >
-      <a href={data.origin_site} target="_blank" rel="noopener noreferrer">
-        {/* <div className="flex w-full flex-col justify-center">{data.title}</div> */}
-      </a>
+      {/* Removed the <a> tag as we are using a modal now */}
     </div>
   );
 }
