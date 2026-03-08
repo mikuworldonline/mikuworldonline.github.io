@@ -1,0 +1,8 @@
+# MikuWorld 自动化 Cron 任务
+# 每小时执行开发任务
+
+# 每小时执行自动开发脚本
+0 * * * * /Users/quanfengmini/.openclaw/workspace/projects/mikuworldonline.github.io/scripts/auto-dev.sh >> /Users/quanfengmini/.openclaw/workspace/projects/mikuworldonline.github.io/.cron.log 2>&1
+
+# 每天凌晨3点深度检查
+0 3 * * * cd /Users/quanfengmini/.openclaw/workspace/projects/mikuworldonline.github.io && /usr/local/bin/openclaw subagents run mikuworld-maintainer --task "全面检查MikuWorld项目，更新所有内容，修复问题，提交更改" >> /Users/quanfengmini/.openclaw/workspace/projects/mikuworldonline.github.io/.deep-check.log 2>&1

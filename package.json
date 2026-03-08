@@ -1,7 +1,8 @@
 {
-  "name": "astro-nomy",
+  "name": "mikuworld",
   "type": "module",
   "version": "0.1.0",
+  "homepage": "https://mikuworld.online",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
