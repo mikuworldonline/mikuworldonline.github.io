@@ -1,0 +1,27 @@
+{
+  "mobile": [
+    {
+      "id": "miku-01",
+      "title": "初音未来 - 星空下的歌声",
+      "url": "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/Hatsune-Miku-%E5%88%9D%E9%9F%B3%E3%83%9F%E3%82%AF-%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5-Wallpaper-ID10000260.webp",
+      "source": "2dwallpapers",
+      "tags": ["星空", "官方", "高清"]
+    },
+    {
+      "id": "miku-02",
+      "title": "初音未来 - 经典绿色",
+      "url": "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/miku.png",
+      "source": "wallhaven",
+      "tags": ["经典", "绿色", "立绘"]
+    }
+  ],
+  "desktop": [
+    {
+      "id": "desktop-01",
+      "title": "初音未来 - 演唱会现场",
+      "url": "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/miku.png",
+      "source": "官方",
+      "tags": ["演唱会", "现场", "横版"]
+    }
+  ]
+}

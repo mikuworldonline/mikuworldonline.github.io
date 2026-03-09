@@ -4,6 +4,9 @@
 
 set -e
 
+# 设置 PATH 确保能找到 pnpm
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+
 PROJECT_DIR="/Users/quanfengmini/.openclaw/workspace/projects/mikuworldonline.github.io"
 LOG_FILE="/Users/quanfengmini/.openclaw/workspace/projects/mikuworldonline.github.io/.auto-dev.log"
 DATE=$(date '+%Y-%m-%d %H:%M:%S')
