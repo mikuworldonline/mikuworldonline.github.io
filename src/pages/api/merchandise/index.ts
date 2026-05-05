@@ -1,0 +1,208 @@
+import type { Merchandise } from "@/types";
+
+// 手办数据
+export const figures: Merchandise[] = [
+  {
+    id: "figure-001",
+    title: "初音未来 粘土人 #1584",
+    description: "GSC 粘土人系列，经典蓝色双马尾造型，可动关节设计。",
+    thumb_url: "https://cdn.jsdelivr.net/gh/0326/imgs@main/merchandise/figure_01.webp",
+    price: "¥5,800",
+    shop_url: "https://www.goodsmile.info",
+    shop_name: "Good Smile Company",
+    category: "figure",
+    scale: "Nendoroid",
+    manufacturer: "Good Smile Company",
+  },
+  {
+    id: "figure-002",
+    title: "初音未来 1/7 手办",
+    description: "1:7比例精细涂装完成品，还原经典插画造型。",
+    thumb_url: "https://cdn.jsdelivr.net/gh/0326/imgs@main/merchandise/figure_02.webp",
+    price: "¥18,000",
+    shop_url: "https://www.amiami.jp",
+    shop_name: "AmiAmi",
+    category: "figure",
+    scale: "1/7",
+    manufacturer: "Max Factory",
+  },
+  {
+    id: "figure-003",
+    title: "初音未来 雪未来 1/8 手办",
+    description: "雪未来 ver. 冬季主题限定版，白色礼服造型精美。",
+    thumb_url: "https://cdn.jsdelivr.net/gh/0326/imgs@main/merchandise/figure_03.webp",
+    price: "¥22,000",
+    shop_url: "https://www.c2j.jp",
+    shop_name: "C2C",
+    category: "figure",
+    scale: "1/8",
+    manufacturer: "Alphamax",
+  },
+  {
+    id: "figure-004",
+    title: "初音未来 樱花未来 1/7 手办",
+    description: "樱花未来 ver. 樱花季限定，粉色系甜美造型。",
+    thumb_url: "https://cdn.jsdelivr.net/gh/0326/imgs@main/merchandise/figure_04.webp",
+    price: "¥20,000",
+    shop_url: "https://www.goodsmile.info",
+    shop_name: "Good Smile Company",
+    category: "figure",
+    scale: "1/7",
+    manufacturer: "Wings",
+  },
+];
+
+// 吧唧数据
+export const badges: Merchandise[] = [
+  {
+    id: "badge-001",
+    title: "初音未来 经典吧唧套装",
+    description: "金属徽章套装，包含多个经典造型，适合收藏和佩戴。",
+    thumb_url: "https://cdn.jsdelivr.net/gh/0326/imgs@main/merchandise/badge_01.webp",
+    price: "¥800",
+    shop_url: "https://www.animate.co.jp",
+    shop_name: "Animate",
+    category: "badge",
+    manufacturer: "Animate",
+  },
+  {
+    id: "badge-002",
+    title: "初音未来 限定徽章",
+    description: "展会限定金属徽章，收藏价值极高。",
+    thumb_url: "https://cdn.jsdelivr.net/gh/0326/imgs@main/merchandise/badge_02.webp",
+    price: "¥1,200",
+    shop_url: "https://www.melonbooks.co.jp",
+    shop_name: "Melonbooks",
+    category: "badge",
+    manufacturer: "SEGA",
+  },
+  {
+    id: "badge-003",
+    title: "初音未来 表情吧唧",
+    description: "可爱表情系列徽章，多种表情可选。",
+    thumb_url: "https://cdn.jsdelivr.net/gh/0326/imgs@main/merchandise/badge_03.webp",
+    price: "¥500",
+    shop_url: "https://www.tora-ame.jp",
+    shop_name: "Tora Ame",
+    category: "badge",
+    manufacturer: "Tora Ame",
+  },
+  {
+    id: "badge-004",
+    title: "初音未来 吧唧挂件套装",
+    description: "带挂绳的吧唧套装，可挂在包上装饰。",
+    thumb_url: "https://cdn.jsdelivr.net/gh/0326/imgs@main/merchandise/badge_04.webp",
+    price: "¥1,000",
+    shop_url: "https://www.c2j.jp",
+    shop_name: "C2C",
+    category: "badge",
+    manufacturer: "C2C",
+  },
+];
+
+// 立牌数据
+export const stands: Merchandise[] = [
+  {
+    id: "stand-001",
+    title: "初音未来 亚克力立牌套装",
+    description: "透明亚克力材质立牌，光影效果精美。",
+    thumb_url: "https://cdn.jsdelivr.net/gh/0326/imgs@main/merchandise/stand_01.webp",
+    price: "¥1,500",
+    shop_url: "https://www.animate.co.jp",
+    shop_name: "Animate",
+    category: "stand",
+    manufacturer: "Animate",
+  },
+  {
+    id: "stand-002",
+    title: "初音未来 限定立牌",
+    description: "展会限定款立牌，特殊工艺制作。",
+    thumb_url: "https://cdn.jsdelivr.net/gh/0326/imgs@main/merchandise/stand_02.webp",
+    price: "¥2,800",
+    shop_url: "https://www.melonbooks.co.jp",
+    shop_name: "Melonbooks",
+    category: "stand",
+    manufacturer: "SEGA",
+  },
+  {
+    id: "stand-003",
+    title: "初音未来 全身立牌",
+    description: "大型全身立牌，高度约 30cm，适合桌面摆放。",
+    thumb_url: "https://cdn.jsdelivr.net/gh/0326/imgs@main/merchandise/stand_03.webp",
+    price: "¥3,500",
+    shop_url: "https://www.goodsmile.info",
+    shop_name: "Good Smile Company",
+    category: "stand",
+    manufacturer: "Good Smile Company",
+  },
+  {
+    id: "stand-004",
+    title: "初音未来 挂脖式立牌",
+    description: "可悬挂的立牌设计，既是装饰又是摆件。",
+    thumb_url: "https://cdn.jsdelivr.net/gh/0326/imgs@main/merchandise/stand_04.webp",
+    price: "¥1,200",
+    shop_url: "https://www.tora-ame.jp",
+    shop_name: "Tora Ame",
+    category: "stand",
+    manufacturer: "Tora Ame",
+  },
+];
+
+// 色纸数据
+export const artprints: Merchandise[] = [
+  {
+    id: "artprint-001",
+    title: "初音未来 官方色纸",
+    description: "官方授权复制原画色纸，收藏价值高。",
+    thumb_url: "https://cdn.jsdelivr.net/gh/0326/imgs@main/merchandise/artprint_01.webp",
+    price: "¥800",
+    shop_url: "https://www.animate.co.jp",
+    shop_name: "Animate",
+    category: "artprint",
+    manufacturer: "SEGA",
+  },
+  {
+    id: "artprint-002",
+    title: "初音未来 画师签名色纸",
+    description: "知名画师绘制并签名的限定色纸。",
+    thumb_url: "https://cdn.jsdelivr.net/gh/0326/imgs@main/merchandise/artprint_02.webp",
+    price: "¥2,500",
+    shop_url: "https://www.melonbooks.co.jp",
+    shop_name: "Melonbooks",
+    category: "artprint",
+    manufacturer: "Melonbooks",
+  },
+  {
+    id: "artprint-003",
+    title: "初音未来 活动限定色纸",
+    description: "Magical Mirai 等活动限定色纸。",
+    thumb_url: "https://cdn.jsdelivr.net/gh/0326/imgs@main/merchandise/artprint_03.webp",
+    price: "¥1,500",
+    shop_url: "https://www.c2j.jp",
+    shop_name: "C2C",
+    category: "artprint",
+    manufacturer: "SEGA",
+  },
+  {
+    id: "artprint-004",
+    title: "初音未来 复制原画套装",
+    description: "高精度复制原画，含多种尺寸可选。",
+    thumb_url: "https://cdn.jsdelivr.net/gh/0326/imgs@main/merchandise/artprint_04.webp",
+    price: "¥3,000",
+    shop_url: "https://www.goodsmile.info",
+    shop_name: "Good Smile Company",
+    category: "artprint",
+    manufacturer: "Good Smile Company",
+  },
+];
+
+// 导出所有周边
+export const allMerchandise = [...figures, ...badges, ...stands, ...artprints];
+
+// 周边分类
+export const merchandiseCategories = [
+  { id: "figure", name: "手办", count: figures.length },
+  { id: "badge", name: "吧唧", count: badges.length },
+  { id: "stand", name: "立牌", count: stands.length },
+  { id: "artprint", name: "色纸", count: artprints.length },
+];

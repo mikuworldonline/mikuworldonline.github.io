@@ -10,6 +10,9 @@ import {
   ExternalLink,
   ArrowLeft,
   ArrowRight,
+  Play,
+  Pause,
+  Search,
   type LucideIcon,
   type LucideProps,
 } from "lucide-react";
@@ -28,6 +31,9 @@ export const Icons = {
   ExternalLink,
   ArrowLeft,
   ArrowRight,
+  Play,
+  Pause,
+  Search,
   logo: ({ ...props }: LucideProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"

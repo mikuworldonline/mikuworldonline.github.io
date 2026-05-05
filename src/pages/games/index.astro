@@ -1,0 +1,21 @@
+---
+export const prerender = false;
+
+import MainLayout from "@/layouts/main-layout.astro";
+import { onlineGames, gameCollection } from "@/pages/api/games";
+import { GamesPage } from "@/pages/games/template";
+---
+
+<MainLayout title="游戏中心 - 初音未来游戏">
+  <section class="container py-8">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold mb-2">游戏中心</h1>
+      <p class="text-muted-foreground">初音未来相关游戏，包含在线可玩的小游戏和游戏合集介绍</p>
+    </div>
+    <GamesPage
+      onlineGames={onlineGames}
+      gameCollection={gameCollection}
+      client:load
+    />
+  </section>
+</MainLayout>

@@ -1,194 +1,62 @@
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
-import { Icons } from "@/icons";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import { Badge } from "@/components/ui/badge";
 import { navMenuConfig } from "@/config/nav-menu";
-import type { MenuItem } from "@/types";
-
-const links = navMenuConfig.links;
-const pictures = navMenuConfig.picturesNav[0];
-const websites = navMenuConfig.websitesNav[0];
-const games = navMenuConfig.gamesNav[0];
-const goods = navMenuConfig.goodsNav[0];
-const videos = navMenuConfig.videosNav[0];
 
 export function MainNavigationMenu() {
   return (
-    <NavigationMenu>
-      <NavigationMenuList>
-        {/* <NavigationMenuItem>
-          <NavigationMenuTrigger>{pages.title}</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <li className="row-span-3">
-                <a
-                  className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                  href="/"
-                >
-                  <Icons.logo className="size-8" />
-                  <div className="mb-2 mt-3 text-lg font-medium">mikuworld.online</div>
-                  <p className="text-sm leading-tight text-muted-foreground">
-                    Pages and websites apps built with Astro v4.5,
-                    shadcn/ui & react js.
-                    <br />
-                    Open Source.
-                  </p>
-                </a>
-              </li>
+    <nav className="flex items-center gap-1">
+      {/* 图像 */}
+      <NavLink href="/pictures/wallpaper/mobile">
+        图像
+      </NavLink>
 
-              {pages.items?.map((page) => (
-                <ListItem key={page.title} {...page} />
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem> */}
+      {/* 影音 */}
+      <NavLink href="/videos/music">
+        影音
+      </NavLink>
 
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>{pictures.title}</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {pictures.items?.map((page) => (
-                <ListItem key={page.title} {...page} />
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
+      {/* 游戏 */}
+      <NavLink href="/games">
+        游戏
+      </NavLink>
 
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>{videos.title}</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {videos.items?.map((example) => (
-                <ListItem key={example.title} {...example} />
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
+      {/* 网站 */}
+      <NavLink href="/websites">
+        网站
+      </NavLink>
 
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>{games.title}</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {games.items?.map((example) => (
-                <ListItem key={example.title} {...example} />
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>{websites.title}</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {websites.items?.map((example) => (
-                <ListItem key={example.title} {...example} />
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>{goods.title}</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {goods.items?.map((example) => (
-                <ListItem key={example.title} {...example} />
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-
-        {links ? (
-          <NavigationMenuItem>
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className={navigationMenuTriggerStyle()}
-                {...(link.forceReload ? { "data-astro-reload": true } : {})}
-              >
-                {link.title}
-              </a>
-            ))}
-          </NavigationMenuItem>
-        ) : null}
-      </NavigationMenuList>
-    </NavigationMenu>
+      {/* 周边 */}
+      <NavLink href="/merchandise">
+        周边
+      </NavLink>
+    </nav>
   );
 }
 
-const ListItem: React.FC<MenuItem> = ({
-  title,
-  href,
-  image,
-  description,
-  launched,
-  disabled,
-  external,
-  forceReload,
-}) => {
+interface NavLinkProps {
+  href: string;
+  children: React.ReactNode;
+  external?: boolean;
+}
+
+function NavLink({ href, children, external }: NavLinkProps) {
   const target = external ? "_blank" : undefined;
-  const opacity = disabled ? 0.7 : 0.4;
-  const cnum = 255;
+  const rel = external ? "noopener noreferrer" : undefined;
+
   return (
-    <li
-      className="relative rounded-md"
-      style={{
-        background: `linear-gradient(rgba(${cnum}, ${cnum}, ${cnum}, 0), rgba(${cnum}, ${cnum}, ${cnum}, ${opacity})), 
-              url('${image}')`,
-        backgroundSize: "contain",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "right bottom",
-      }}
+    <a
+      href={href}
+      target={target}
+      rel={rel}
+      className={cn(
+        "px-4 py-2 text-sm font-medium rounded-lg",
+        "text-muted-foreground",
+        "hover:text-foreground hover:bg-accent",
+        "transition-colors duration-200"
+      )}
     >
-      <a
-        target={target}
-        href={disabled ? undefined : href}
-        {...(forceReload ? { "data-astro-reload": true } : {})}
-        className={cn(
-          "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-          disabled
-            ? "text-muted-foreground hover:bg-transparent hover:text-muted-foreground"
-            : ""
-        )}
-      >
-        <div className="flex items-center text-sm font-medium leading-none">
-          <span className="mr-2">{title}</span>
-          {disabled ? (
-            <Badge
-              variant="secondary"
-              radius="sm"
-              className="h-5 px-1.5 text-xs font-medium"
-            >
-              SOON
-            </Badge>
-          ) : null}
-          {launched ? (
-            <Badge
-              radius="sm"
-              className="h-5 px-1.5 text-xs font-medium bg-[#ebf5ff] hover:bg-[#ebf5ff] text-[#0068d6]"
-            >
-              NEW
-            </Badge>
-          ) : null}
-        </div>
-        <p
-          className="line-clamp-2 text-sm leading-snug text-muted-foreground"
-          style={{ visibility: "hidden" }}
-        >
-          {description}
-        </p>
-      </a>
-    </li>
+      {children}
+    </a>
   );
-};
-ListItem.displayName = "ListItem";
+}

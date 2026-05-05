@@ -1,0 +1,23 @@
+---
+export const prerender = false;
+
+import MainLayout from "@/layouts/main-layout.astro";
+import { figures, badges, stands, artprints } from "@/pages/api/merchandise";
+import { MerchandisePage } from "@/pages/merchandise/template";
+---
+
+<MainLayout title="周边中心 - 初音未来周边">
+  <section class="container py-8">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold mb-2">周边中心</h1>
+      <p class="text-muted-foreground">初音未来周边商品，包含手办、吧唧、立牌、色纸等</p>
+    </div>
+    <MerchandisePage
+      figures={figures}
+      badges={badges}
+      stands={stands}
+      artprints={artprints}
+      client:load
+    />
+  </section>
+</MainLayout>

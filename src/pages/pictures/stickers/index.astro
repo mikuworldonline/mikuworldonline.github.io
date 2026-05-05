@@ -1,0 +1,17 @@
+---
+export const prerender = false;
+
+import MainLayout from "@/layouts/main-layout.astro";
+import { stickers } from "@/pages/api/pictures/stickers";
+import { StickerList } from "@/pages/pictures/stickers/template";
+---
+
+<MainLayout title="表情包 - 初音未来表情包精选">
+  <section class="container py-8">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold mb-2">表情包</h1>
+      <p class="text-muted-foreground">精选初音未来主题表情包，包含静态图和 GIF 动图</p>
+    </div>
+    <StickerList data={stickers} client:load />
+  </section>
+</MainLayout>

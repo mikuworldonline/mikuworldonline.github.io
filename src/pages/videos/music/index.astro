@@ -1,0 +1,17 @@
+---
+export const prerender = false;
+
+import MainLayout from "@/layouts/main-layout.astro";
+import { musicList } from "@/pages/api/videos/music";
+import { MusicList } from "@/pages/videos/music/template";
+---
+
+<MainLayout title="音乐 - 初音未来经典歌曲">
+  <section class="container py-8">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold mb-2">音乐</h1>
+      <p class="text-muted-foreground">精选初音未来经典歌曲，包含 VOCALOID 殿堂曲和经典名作</p>
+    </div>
+    <MusicList data={musicList} client:load />
+  </section>
+</MainLayout>

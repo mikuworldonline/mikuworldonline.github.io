@@ -1,0 +1,23 @@
+---
+export const prerender = false;
+
+import MainLayout from "@/layouts/main-layout.astro";
+import { officialSites, communitySites, resourceSites, fansiteSites } from "@/pages/api/websites";
+import { WebsitesPage } from "@/pages/websites/template";
+---
+
+<MainLayout title="网站导航 - 初音未来相关网站">
+  <section class="container py-8">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold mb-2">网站导航</h1>
+      <p class="text-muted-foreground">收录初音未来相关网站，包括官方、创作社区、资源站和粉丝站点</p>
+    </div>
+    <WebsitesPage
+      officialSites={officialSites}
+      communitySites={communitySites}
+      resourceSites={resourceSites}
+      fansiteSites={fansiteSites}
+      client:load
+    />
+  </section>
+</MainLayout>

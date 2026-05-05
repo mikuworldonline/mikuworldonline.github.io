@@ -1,0 +1,17 @@
+---
+export const prerender = false;
+
+import MainLayout from "@/layouts/main-layout.astro";
+import { videoList } from "@/pages/api/videos/clips";
+import { VideoList } from "@/pages/videos/clips/template";
+---
+
+<MainLayout title="视频 - 初音未来精选视频">
+  <section class="container py-8">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold mb-2">视频</h1>
+      <p class="text-muted-foreground">精选初音未来官方 PV、演唱会 Live、MV 等视频内容</p>
+    </div>
+    <VideoList data={videoList} client:load />
+  </section>
+</MainLayout>
