@@ -1,0 +1,19 @@
+---
+export const prerender = false;
+
+import MainLayout from "@/layouts/main-layout.astro";
+import { doujinWorks } from "@/pages/api/doujin";
+import { DoujinPage } from "@/pages/doujin/template";
+---
+
+<MainLayout title="同人作品 - 初音未来同人音乐与创作">
+  <section class="container py-8">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold mb-2">同人作品</h1>
+      <p class="text-muted-foreground">
+        初音未来相关的同人 / 独立音乐社团作品，涵盖同人专辑、单曲与合辑（全年龄向）。数据来源 VocaDB。
+      </p>
+    </div>
+    <DoujinPage works={doujinWorks} client:load />
+  </section>
+</MainLayout>
