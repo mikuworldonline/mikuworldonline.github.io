@@ -1,0 +1,20 @@
+---
+export const prerender = false;
+
+import MainLayout from "@/layouts/main-layout.astro";
+import { mmdModels } from "@/pages/api/mmd";
+import { MMDPage } from "@/pages/mmd/template";
+---
+
+<MainLayout title="MMD 模型 - 初音未来 MikuMikuDance 模型分享">
+  <section class="container py-8">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold mb-2">MMD 模型</h1>
+      <p class="text-muted-foreground">
+        精选初音未来及 Vocaloid 角色的 MikuMikuDance（MMD）3D 模型分享，涵盖
+        TDA、Append、Animasa、LAT 等经典风格，来源 Sketchfab、DeviantArt 等社区，点击卡片前往原始下载页。
+      </p>
+    </div>
+    <MMDPage data={mmdModels} client:load />
+  </section>
+</MainLayout>
