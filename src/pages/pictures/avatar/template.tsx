@@ -2,10 +2,8 @@ import type { Avatar } from "@/types";
 import { useState } from "react";
 import { PreviewModal } from "@/components/resource/preview-modal";
 import { AvatarCard } from "@/components/resource/avatar-card";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { Icons } from "@/icons";
+import { SearchBar } from "@/components/resource/search-bar";
+import { EmptyState } from "@/components/resource/empty-state";
 
 interface AvatarListProps {
   data: Avatar[];
@@ -48,21 +46,13 @@ export function AvatarList({ data }: AvatarListProps) {
   return (
     <div>
       {/* Search Bar */}
-      <div className="mb-6 flex gap-4 items-center">
-        <div className="relative flex-1 max-w-md">
-          <Icons.Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-          <Input
-            type="search"
-            placeholder="搜索头像..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="pl-10"
-          />
-        </div>
-        <span className="text-sm text-muted-foreground">
-          共 {filteredData.length} 个头像
-        </span>
-      </div>
+      <SearchBar
+        value={searchQuery}
+        onChange={setSearchQuery}
+        placeholder="搜索头像..."
+        count={filteredData.length}
+        countLabel="个头像"
+      />
 
       {/* Avatar Grid */}
       <div className="flex flex-wrap gap-4 justify-start">
@@ -77,11 +67,7 @@ export function AvatarList({ data }: AvatarListProps) {
       </div>
 
       {/* Empty State */}
-      {filteredData.length === 0 && (
-        <div className="text-center py-12">
-          <p className="text-muted-foreground">未找到匹配的头像</p>
-        </div>
-      )}
+      {filteredData.length === 0 && <EmptyState message="未找到匹配的头像" />}
 
       {/* Preview Modal */}
       {selectedIndex !== null && filteredData[selectedIndex] && (
