@@ -96,6 +96,31 @@ export const navMenuConfig: NavMenuConfig = {
       ],
     },
   ],
+  extraNav: [
+    {
+      title: "更多",
+      items: [
+        {
+          title: "MMD 模型",
+          href: "/mmd",
+          description: "初音未来 MMD 模型下载与作品展示",
+          image: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/emj2.png",
+        },
+        {
+          title: "同人作品",
+          href: "/doujin",
+          description: "初音未来同人插画、漫画与创作精选",
+          image: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/emj2.png",
+        },
+        {
+          title: "新闻活动",
+          href: "/news",
+          description: "初音未来最新资讯、演唱会与线下活动",
+          image: "https://cdn.jsdelivr.net/gh/0326/imgs@main/blog/emj2.png",
+        },
+      ],
+    },
+  ],
   links: [
     // {
     //   title: "网站链接",
