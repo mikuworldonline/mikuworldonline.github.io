@@ -2,61 +2,102 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 import { navMenuConfig } from "@/config/nav-menu";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
+import type { MenuItem, SidebarNavItem } from "@/types";
+
+// 顶栏一级类目：标签 + 对应配置组
+const categories: { label: string; groups: SidebarNavItem[] }[] = [
+  { label: "图像", groups: navMenuConfig.picturesNav },
+  { label: "影音", groups: navMenuConfig.videosNav },
+  { label: "游戏", groups: navMenuConfig.gamesNav },
+  { label: "网站", groups: navMenuConfig.websitesNav },
+  { label: "周边", groups: navMenuConfig.goodsNav },
+  { label: "更多", groups: navMenuConfig.extraNav },
+];
 
 export function MainNavigationMenu() {
   return (
-    <nav className="flex items-center gap-1">
-      {/* 图像 */}
-      <NavLink href="/pictures/wallpaper/mobile">
-        图像
-      </NavLink>
+    <NavigationMenu>
+      <NavigationMenuList>
+        {categories.map((category) => {
+          const items = category.groups
+            .flatMap((group) => group.items ?? [])
+            .filter((item) => !item.disabled);
 
-      {/* 影音 */}
-      <NavLink href="/videos/music">
-        影音
-      </NavLink>
+          if (items.length === 0) return null;
 
-      {/* 游戏 */}
-      <NavLink href="/games">
-        游戏
-      </NavLink>
+          // 单项类目直接做成链接，避免多余的下拉
+          if (items.length === 1) {
+            const single = items[0];
+            return (
+              <NavigationMenuItem key={category.label}>
+                <NavigationMenuLink
+                  href={single.href}
+                  target={single.external ? "_blank" : undefined}
+                  rel={single.external ? "noopener noreferrer" : undefined}
+                  className={navigationMenuTriggerStyle()}
+                >
+                  {category.label}
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            );
+          }
 
-      {/* 网站 */}
-      <NavLink href="/websites">
-        网站
-      </NavLink>
-
-      {/* 周边 */}
-      <NavLink href="/merchandise">
-        周边
-      </NavLink>
-    </nav>
+          return (
+            <NavigationMenuItem key={category.label}>
+              <NavigationMenuTrigger>{category.label}</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid w-[320px] gap-1 p-3 md:w-[420px] md:grid-cols-2">
+                  {items.map((item) => (
+                    <ListItem key={item.href} item={item} />
+                  ))}
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+          );
+        })}
+      </NavigationMenuList>
+    </NavigationMenu>
   );
 }
 
-interface NavLinkProps {
-  href: string;
-  children: React.ReactNode;
-  external?: boolean;
-}
-
-function NavLink({ href, children, external }: NavLinkProps) {
-  const target = external ? "_blank" : undefined;
-  const rel = external ? "noopener noreferrer" : undefined;
-
+function ListItem({ item }: { item: MenuItem }) {
   return (
-    <a
-      href={href}
-      target={target}
-      rel={rel}
-      className={cn(
-        "px-4 py-2 text-sm font-medium rounded-lg",
-        "text-muted-foreground",
-        "hover:text-foreground hover:bg-accent",
-        "transition-colors duration-200"
-      )}
-    >
-      {children}
-    </a>
+    <li>
+      <NavigationMenuLink
+        href={item.href}
+        target={item.external ? "_blank" : undefined}
+        rel={item.external ? "noopener noreferrer" : undefined}
+        className={cn(
+          "flex select-none items-start gap-3 rounded-md p-3 leading-none no-underline outline-none transition-colors",
+          "hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+        )}
+      >
+        {item.image ? (
+          <img
+            src={item.image}
+            alt=""
+            loading="lazy"
+            className="size-10 shrink-0 rounded-md object-cover"
+          />
+        ) : null}
+        <div className="space-y-1">
+          <div className="text-sm font-medium leading-none">{item.title}</div>
+          {item.description ? (
+            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+              {item.description}
+            </p>
+          ) : null}
+        </div>
+      </NavigationMenuLink>
+    </li>
   );
 }
