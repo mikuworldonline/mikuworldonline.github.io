@@ -1,0 +1,19 @@
+---
+export const prerender = false;
+
+import MainLayout from "@/layouts/main-layout.astro";
+import { sortedNewsList, newsCategories } from "@/pages/api/news";
+import { NewsPage } from "@/pages/news/template";
+---
+
+<MainLayout title="新闻 / 活动 - 初音未来资讯">
+  <section class="container py-8">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold mb-2">新闻 / 活动</h1>
+      <p class="text-muted-foreground">
+        初音未来官方最新资讯，涵盖 Magical Mirai、SNOW MIKU、MIKU EXPO、Project SEKAI 活动与软件、联名等公告。
+      </p>
+    </div>
+    <NewsPage data={sortedNewsList} categories={newsCategories} client:load />
+  </section>
+</MainLayout>
